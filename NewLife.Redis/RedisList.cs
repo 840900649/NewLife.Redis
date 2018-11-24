@@ -36,7 +36,7 @@ namespace NewLife.Caching
 
         /// <summary>添加元素在后面</summary>
         /// <param name="item"></param>
-        public void Add(T item) => Execute(r => r.Execute<T>("RPUSH", Key, item), true);
+        public void Add(T item) => Execute(r => r.Execute<int>("RPUSH", Key, item), true);
 
         /// <summary>清空列表</summary>
         public void Clear() => LTrim(0, -1);
